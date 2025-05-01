@@ -9,28 +9,44 @@ function Header(props) {
     }`;
 
   return (
-    <header className="fixed top-6 left-0 w-full bg-blue-900 text-white h-20 z-50 shadow-lg">
-      <nav className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-2 h-full">
-        <NavLink
-          to="/"
-          className="flex items-center justify-center sm:justify-start relative hover:text-red-600 transition-colors duration-200"
-        >
-          <img
-            src={logo}
-            alt="FCB Logo"
-            className="w-28 sm:w-36 h-28 sm:h-32 -mt-4 sm:-mt-6 -mb-4 sm:-mb-6 z-20"
-          />
-          <div className="ml-2 sm:ml-4 text-lg sm:text-xl font-bold text-center sm:text-left">
-            {props.title}
-          </div>
-        </NavLink>
+    <header className="fixed top-0 left-0 w-full mt-3 bg-blue-900 text-white h-16 md:h-20 z-50 shadow-lg">
+      <div className="container mx-auto px-4 h-full">
+        <nav className="flex justify-between items-center h-full">
+          {/* Logo and Title */}
+          <NavLink
+            to="/"
+            className="flex items-center hover:text-red-600 transition-colors duration-200"
+          >
+            <img
+              src={logo}
+              alt="FCB Logo"
+              className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 -mt-2 md:-mt-4 -mb-2 md:-mb-4"
+            />
+            <div className="ml-2 text-sm md:text-lg lg:text-xl font-bold whitespace-nowrap">
+              {props.title}
+            </div>
+          </NavLink>
 
-        <ul className="flex flex-col sm:flex-row sm:space-x-20 text-lg sm:text-xl font-bold mt-2 sm:mt-0 sm:mr-10 items-center sm:items-end">
-          <li><NavLink to="/about" className={navLinkStyle}>About</NavLink></li>
-          <li><NavLink to="/player" className={navLinkStyle}>Player</NavLink></li>
-          <li><NavLink to="/trophy" className={navLinkStyle}>Trophy</NavLink></li>
-        </ul>
-      </nav>
+          {/* Navigation Links */}
+          <ul className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 text-sm md:text-base lg:text-lg font-bold">
+            <li>
+              <NavLink to="/about" className={navLinkStyle}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/player" className={navLinkStyle}>
+                Player
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/trophy" className={navLinkStyle}>
+                Trophy
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
